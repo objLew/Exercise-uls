@@ -61,53 +61,67 @@ namespace GeneralLibrary
 
         private static List<string> RunSpecifiedOperations(List<string> splitString, params string[] operators)
         {
-            var result = new List<string>();
+            List<string> result = new List<string>();
 
-            List<string> resultOfDivisionMultiplcation = new List<string>();
-
-
-            for (int i = 1; i < splitString.Count; i++)
+            int lastOperation = -100;
+            for (int i = 1; i < splitString.Count-1; i++)
             {
                 if (i >= splitString.Count) break;
 
                 string currentPos = splitString[i];
 
-                // first and last will definitely be numbers as we have done sanity check so can just add these then continue
-                if (i == 0 || i == splitString.Count() - 1)
-                {
-                    resultOfDivisionMultiplcation.Add(currentPos);
-                    continue;
-                }
 
+                string posMinusOne = splitString[i-1];
+                string posPlusOne = splitString[i+1];
+                //if position ahead contains operator, skip
+                if (operators.Contains(posPlusOne)) continue;
 
-                string posMinusOne = splitString[i];
-                string posPlusOne = splitString[i];
 
                 // reset temporary variables
                 double firstVal = 0.0;
                 double secondVal = 0.0;
 
                 //if this is an operator, perform the calculation
+                bool operatorMatched = false;
                 foreach (var numericalOperator in operators)
                 {
                     // if this is an operator, do the calculation
                     if(currentPos == numericalOperator)
                     {
+                        // pop list if we added this result previously (we are using a result we just made)
+                        if (lastOperation == i - 2)
+                        {
+                            posMinusOne = result[result.Count() - 1];
+                            result.RemoveAt(result.Count() - 1);
+                        }
+
                         firstVal = double.Parse(posMinusOne);
                         secondVal = double.Parse(posPlusOne);
 
                         var resultOfOperation = PerformCalulation(numericalOperator, firstVal, secondVal);
-                        resultOfDivisionMultiplcation.Add(resultOfOperation.ToString());
+                        result.Add(resultOfOperation.ToString());
 
-                        //step two ahead so that we don't interact any numbers we have already calculated
-                        i += 2;
-                        continue;
+                        
+                        //update last operation
+                        lastOperation = i;
+
+                        //step ahead one (plus loop adds one) so that we don't interact any numbers we have already calculated
+                        i++;
+                        operatorMatched = true;
+
+                        break;
                     }
                 }
 
-                // if this is a number just add to the list
-                resultOfDivisionMultiplcation.Add(currentPos);
+                if (operatorMatched)
+                    continue;
 
+                // if this is a number just add to the list
+                result.Add(currentPos);
+
+                //if not calculation at the end, add the last item.
+                if(i == splitString.Count-2)
+                    result.Add(splitString[splitString.Count - 1]); 
             }
 
 
@@ -158,13 +172,12 @@ namespace GeneralLibrary
         /// </summary>
         /// <param name="inputString">string to split</param>
         /// <returns>list containing individual elements</returns>
-        private static List<string> SplitInput(string inputString)
+        public static List<string> SplitInput(string inputString)
         {
-            char[] delimiters = { '/', '*', '+', '-' };
+            string pattern = @"(\+|\-|\*|\/)";
 
-            // This should be sufficient for now as we have a sanity check for string
-            List<string> splits = inputString.Split(delimiters).ToList();
-
+            // Update to regex so that we can keep the operators
+            var splits = Regex.Split(inputString, pattern).ToList();
 
             return splits;
         }

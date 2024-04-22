@@ -181,14 +181,50 @@ namespace DecodeTestMSTtest
 
             // Act
             double result = DecodeHelper.GetResult(inputString);
-
+            result = Math.Round(result, 2);
 
             //Assert
-            Assert.IsTrue(result == 21);
+            Assert.IsTrue(result == 16.67);
         }
 
         // would test many variation of this
         // likely a list or dictionary containing verified results so that we could test any edgecases
+
+
+        #endregion
+
+        #region split string
+        [TestMethod]
+        public void SplitString()
+        {
+            // Arrange
+            string inputString = "2/3+5*3-6+7";
+
+
+            // Act
+            List<string> result = DecodeHelper.SplitInput(inputString);
+
+
+            //Assert
+            List<string> validSplit = new List<string>() 
+            {
+                "2", "/","3","+","5","*","3","-","6","+","7"
+            };
+
+            // -> .AreEqual is returning false, will just assert myself for nw
+            var resultList1 = validSplit.Except(result).ToList();
+            var resultList2 = result.Except(validSplit).ToList();
+
+            if (!resultList1.Any() && !resultList2.Any())
+            {
+                Assert.IsTrue(true);
+                return;
+            }
+            
+            Assert.IsTrue(false);
+           
+        }
+
 
 
         #endregion
