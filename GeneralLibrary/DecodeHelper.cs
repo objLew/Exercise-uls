@@ -158,7 +158,7 @@ namespace GeneralLibrary
         /// </summary>
         /// <param name="inputString">string to split</param>
         /// <returns>list containing individual elements</returns>
-        public static List<string> SplitInput(string inputString)
+        private static List<string> SplitInput(string inputString)
         {
             char[] delimiters = { '/', '*', '+', '-' };
 

@@ -3,18 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uls-task.Server", "Server\uls-task.Server.csproj", "{46285334-2421-44D1-834D-9A48C552D683}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "uls-task.Server", "Server\uls-task.Server.csproj", "{46285334-2421-44D1-834D-9A48C552D683}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uls-task.Client", "Client\uls-task.Client.csproj", "{27E3A9A1-B7F1-4ED5-90BE-1D35F216AB2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "uls-task.Client", "Client\uls-task.Client.csproj", "{27E3A9A1-B7F1-4ED5-90BE-1D35F216AB2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uls-task.Shared", "Shared\uls-task.Shared.csproj", "{B1DCA669-2EF0-4E8E-8AEF-1A367FC6156C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "uls-task.Shared", "Shared\uls-task.Shared.csproj", "{B1DCA669-2EF0-4E8E-8AEF-1A367FC6156C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneralLibrary", "..\GeneralLibrary\GeneralLibrary.csproj", "{336652DE-424B-4135-8C04-972162C2231D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeneralLibrary", "..\GeneralLibrary\GeneralLibrary.csproj", "{336652DE-424B-4135-8C04-972162C2231D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneralLibUnitTests", "..\GeneralLibUnitTests\GeneralLibUnitTests.csproj", "{DF788840-306F-42E0-978B-194296D91097}"
-	ProjectSection(ProjectDependencies) = postProject
-		{336652DE-424B-4135-8C04-972162C2231D} = {336652DE-424B-4135-8C04-972162C2231D}
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecodeTestMSTtest", "DecodeTestMSTtest\DecodeTestMSTtest.csproj", "{CE3352DB-1456-4548-9F1E-560596E54B41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,10 +35,10 @@ Global
 		{336652DE-424B-4135-8C04-972162C2231D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{336652DE-424B-4135-8C04-972162C2231D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{336652DE-424B-4135-8C04-972162C2231D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DF788840-306F-42E0-978B-194296D91097}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DF788840-306F-42E0-978B-194296D91097}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DF788840-306F-42E0-978B-194296D91097}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DF788840-306F-42E0-978B-194296D91097}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE3352DB-1456-4548-9F1E-560596E54B41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE3352DB-1456-4548-9F1E-560596E54B41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE3352DB-1456-4548-9F1E-560596E54B41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE3352DB-1456-4548-9F1E-560596E54B41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

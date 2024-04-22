@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("uls-task.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+46b4b610e877f5f94aa6dea73aa34e24e9786373")]
 [assembly: System.Reflection.AssemblyProductAttribute("uls-task.Shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("uls-task.Shared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

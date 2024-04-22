@@ -53,9 +53,9 @@ namespace DecodeTestMSTtest
         #endregion
 
 
-
         #region valid items
 
+        [TestMethod]
         public void SanityCheckValidCharacter()
         {
             // Arrange
@@ -97,8 +97,105 @@ namespace DecodeTestMSTtest
         #endregion
 
 
+        #region perform calculation test
+
+        [TestMethod]
+        public void Multiply()
+        {
+            // Arrange
+            string mathOperator = "*";
+            double one = 5;
+            double two = 2;
+
+            // Act
+            double result = DecodeHelper.PerformCalulation(mathOperator, one, two);
 
 
+            //Assert
+            Assert.IsTrue(result == 10);
+        }
+
+
+        [TestMethod]
+        public void Divide()
+        {
+            // Arrange
+            string mathOperator = "/";
+            double one = 5;
+            double two = 2;
+
+            // Act
+            double result = DecodeHelper.PerformCalulation(mathOperator, one, two);
+
+
+            //Assert
+            Assert.IsTrue(result == 2.5);
+
+        }
+
+        // ...
+
+        #endregion
+
+
+        #region get result
+        
+        [TestMethod]
+        public void GetResultOfSimpleStringPlus()
+        {
+            // Arrange
+            string inputString = "2+77";
+
+
+            // Act
+            double result = DecodeHelper.GetResult(inputString);
+
+
+            //Assert
+            Assert.IsTrue(result == 9);
+        }
+
+
+        [TestMethod]
+        public void GetResultOfSimpleStringSubtraction()
+        {
+            // Arrange
+            string inputString = "10-4";
+
+
+            // Act
+            double result = DecodeHelper.GetResult(inputString);
+
+
+            //Assert
+            Assert.IsTrue(result == 6);
+
+        }
+
+        [TestMethod]
+        public void GetResultOfComplexStringSubtraction()
+        {
+            // Arrange
+            string inputString = "2/3+5*3-6+7";
+
+
+            // Act
+            double result = DecodeHelper.GetResult(inputString);
+
+
+            //Assert
+            Assert.IsTrue(result == 21);
+        }
+
+        // would test many variation of this
+        // likely a list or dictionary containing verified results so that we could test any edgecases
+
+
+        #endregion
+
+
+
+        //and so on, even for a simple api like this you can do hundreds of tests but I will leave it here.
 
 
     }
