@@ -152,7 +152,7 @@ namespace DecodeTestMSTtest
 
 
             //Assert
-            Assert.IsTrue(result == 9);
+            Assert.IsTrue(result == 79);
         }
 
 

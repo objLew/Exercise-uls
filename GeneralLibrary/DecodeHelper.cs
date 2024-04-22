@@ -116,12 +116,16 @@ namespace GeneralLibrary
                 if (operatorMatched)
                     continue;
 
+
+                if (i == 1)
+                    result.Add(splitString[0]); // operator wasn't used
+
                 // if this is a number just add to the list
                 result.Add(currentPos);
 
                 //if not calculation at the end, add the last item.
                 if(i == splitString.Count-2)
-                    result.Add(splitString[splitString.Count - 1]); 
+                    result.Add(splitString[splitString.Count - 1]);
             }
 
 
