@@ -9,6 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uls-task.Client", "Client\u
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uls-task.Shared", "Shared\uls-task.Shared.csproj", "{B1DCA669-2EF0-4E8E-8AEF-1A367FC6156C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneralLibrary", "..\GeneralLibrary\GeneralLibrary.csproj", "{336652DE-424B-4135-8C04-972162C2231D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneralLibUnitTests", "..\GeneralLibUnitTests\GeneralLibUnitTests.csproj", "{DF788840-306F-42E0-978B-194296D91097}"
+	ProjectSection(ProjectDependencies) = postProject
+		{336652DE-424B-4135-8C04-972162C2231D} = {336652DE-424B-4135-8C04-972162C2231D}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +34,14 @@ Global
 		{B1DCA669-2EF0-4E8E-8AEF-1A367FC6156C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1DCA669-2EF0-4E8E-8AEF-1A367FC6156C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1DCA669-2EF0-4E8E-8AEF-1A367FC6156C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{336652DE-424B-4135-8C04-972162C2231D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{336652DE-424B-4135-8C04-972162C2231D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{336652DE-424B-4135-8C04-972162C2231D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{336652DE-424B-4135-8C04-972162C2231D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF788840-306F-42E0-978B-194296D91097}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF788840-306F-42E0-978B-194296D91097}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF788840-306F-42E0-978B-194296D91097}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF788840-306F-42E0-978B-194296D91097}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

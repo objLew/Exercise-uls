@@ -3,12 +3,27 @@ using System;
 
 namespace GeneralLibUnitTests
 {
+    /// <summary>
+    /// I'll test all functions here although this could be split for easier maintenance 
+    /// All tests will follow AAA standard (arrange, act, assert)
+    /// </summary>
     [TestClass]
-    public class UnitTest1
+    public class DecodeTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void SanityCheckInvalidCharacter()
         {
+            // Arrange
+            string inputString = "2.5*3p";
+
+            // Act
+            Boolean result = DecodeHelper.SanityCheck(inputString);
+
+            // Assert
+            Assert.IsFalse(result);
         }
+
+
+
     }
 }
