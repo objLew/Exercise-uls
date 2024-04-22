@@ -15,6 +15,8 @@ namespace uls_task.Server.Controllers
         [Route("CalculateString")]
         public IActionResult CalculateString(string CalculateThis)
         {
+
+            // Sanity check string
             try
             {
                 bool isValidString = DecodeHelper.SanityCheckInput(CalculateThis);
@@ -29,15 +31,22 @@ namespace uls_task.Server.Controllers
                 return BadRequest("Input string is invalid");
             }
 
+            // Calculate result
+            double result = 0.0;
+            try
+            {
+                result = DecodeHelper.GetResult(CalculateThis);
+            }
+            catch
+            {
+                return BadRequest("Unable to calculate, please contact support");
+            }
 
 
 
-
-
-
-            return BadRequest();
-
-            return View();
+            return Ok(result);
         }
+
     }
+
 }
