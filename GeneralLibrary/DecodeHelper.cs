@@ -33,6 +33,8 @@ namespace GeneralLibrary
         /// <returns></returns>
         public static double GetResult(string inputString)
         {
+            double result = 0.0;
+
             // Split string by non numberical value for processing
             List<string> splitString = SplitInput(inputString);
 
@@ -45,6 +47,13 @@ namespace GeneralLibrary
             //      one alternative can be keeping a stack and popping in order but this may be harder for another dev to understand
 
             List<string> resultOfDM = RunSpecifiedOperations(splitString, "*", "/");
+
+            if(resultOfDM.Count() == 1)
+            {
+                result = double.Parse(resultOfDM.First());
+                return result;
+            }
+
             List<string> resultString = RunSpecifiedOperations(resultOfDM, "+", "-");
 
             // the resultString should only contain the final answer, 
@@ -52,7 +61,7 @@ namespace GeneralLibrary
             if (resultString.Count != 1)
                 throw new Exception("string malformed");
 
-            double result = double.Parse(resultString.First());
+            result = double.Parse(resultString.First());
 
 
             return result;
