@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("uls-task.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+63525d52b395294a85540b2b8b97d7d89497fe2e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+999783eebc7b984c53582598e6202159d24a41f7")]
 [assembly: System.Reflection.AssemblyProductAttribute("uls-task.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("uls-task.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
