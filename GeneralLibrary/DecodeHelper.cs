@@ -44,25 +44,32 @@ namespace GeneralLibrary
             // note:
             //      one alternative can be keeping a stack and popping in order but this may be harder for another dev to understand
 
-            
+            List<string> resultOfDM = RunSpecifiedOperations(splitString, "*", "/");
+            List<string> resultString = RunSpecifiedOperations(resultOfDM, "+", "-");
 
+            // the resultString should only contain the final answer, 
 
+            if (resultString.Count != 1)
+                throw new Exception("string malformed");
 
+            double result = double.Parse(resultString.First());
 
-            double result = 0.0;
 
             return result;
         }
 
 
-        private static List<string> RunSpecifiedOperations(List<string> splitString, List<string> operators)
+        private static List<string> RunSpecifiedOperations(List<string> splitString, params string[] operators)
         {
             var result = new List<string>();
 
             List<string> resultOfDivisionMultiplcation = new List<string>();
 
+
             for (int i = 1; i < splitString.Count; i++)
             {
+                if (i >= splitString.Count) break;
+
                 string currentPos = splitString[i];
 
                 // first and last will definitely be numbers as we have done sanity check so can just add these then continue
@@ -79,9 +86,8 @@ namespace GeneralLibrary
                 // reset temporary variables
                 double firstVal = 0.0;
                 double secondVal = 0.0;
-                double tempResult = 0.0;
 
-
+                //if this is an operator, perform the calculation
                 foreach (var numericalOperator in operators)
                 {
                     // if this is an operator, do the calculation
@@ -91,8 +97,16 @@ namespace GeneralLibrary
                         secondVal = double.Parse(posPlusOne);
 
                         var resultOfOperation = PerformCalulation(numericalOperator, firstVal, secondVal);
+                        resultOfDivisionMultiplcation.Add(resultOfOperation.ToString());
+
+                        //step two ahead so that we don't interact any numbers we have already calculated
+                        i += 2;
+                        continue;
                     }
                 }
+
+                // if this is a number just add to the list
+                resultOfDivisionMultiplcation.Add(currentPos);
 
             }
 
@@ -146,9 +160,13 @@ namespace GeneralLibrary
         /// <returns>list containing individual elements</returns>
         public static List<string> SplitInput(string inputString)
         {
+            char[] delimiters = { '/', '*', '+', '-' };
+
+            // This should be sufficient for now as we have a sanity check for string
+            List<string> splits = inputString.Split(delimiters).ToList();
 
 
-            return new List<string>();
+            return splits;
         }
 
 
