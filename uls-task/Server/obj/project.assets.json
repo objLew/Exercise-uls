@@ -512,6 +512,16 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
+      "GeneralLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/GeneralLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GeneralLibrary.dll": {}
+        }
+      },
       "uls-task.Client/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -1199,6 +1209,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "GeneralLibrary/1.0.0": {
+      "type": "project",
+      "path": "../../GeneralLibrary/GeneralLibrary.csproj",
+      "msbuildProject": "../../GeneralLibrary/GeneralLibrary.csproj"
+    },
     "uls-task.Client/1.0.0": {
       "type": "project",
       "path": "../Client/uls-task.Client.csproj",
@@ -1212,6 +1227,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "GeneralLibrary >= 1.0.0",
       "Microsoft.AspNetCore.Components.WebAssembly.Server >= 6.0.24",
       "uls-task.Client >= 1.0.0",
       "uls-task.Shared >= 1.0.0"
@@ -1246,6 +1262,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\Github\\Exercise-uls\\GeneralLibrary\\GeneralLibrary.csproj": {
+              "projectPath": "C:\\Github\\Exercise-uls\\GeneralLibrary\\GeneralLibrary.csproj"
+            },
             "C:\\Github\\Exercise-uls\\uls-task\\Client\\uls-task.Client.csproj": {
               "projectPath": "C:\\Github\\Exercise-uls\\uls-task\\Client\\uls-task.Client.csproj"
             },

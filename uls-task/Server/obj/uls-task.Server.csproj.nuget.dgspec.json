@@ -4,6 +4,63 @@
     "C:\\Github\\Exercise-uls\\uls-task\\Server\\uls-task.Server.csproj": {}
   },
   "projects": {
+    "C:\\Github\\Exercise-uls\\GeneralLibrary\\GeneralLibrary.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Github\\Exercise-uls\\GeneralLibrary\\GeneralLibrary.csproj",
+        "projectName": "GeneralLibrary",
+        "projectPath": "C:\\Github\\Exercise-uls\\GeneralLibrary\\GeneralLibrary.csproj",
+        "packagesPath": "C:\\Users\\lewis\\.nuget\\packages\\",
+        "outputPath": "C:\\Github\\Exercise-uls\\GeneralLibrary\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\lewis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files (x86)\\Progress\\Telerik UI for Blazor 3.6.1": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.telerik.com/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Github\\Exercise-uls\\uls-task\\Client\\uls-task.Client.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -131,6 +188,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "C:\\Github\\Exercise-uls\\GeneralLibrary\\GeneralLibrary.csproj": {
+                "projectPath": "C:\\Github\\Exercise-uls\\GeneralLibrary\\GeneralLibrary.csproj"
+              },
               "C:\\Github\\Exercise-uls\\uls-task\\Client\\uls-task.Client.csproj": {
                 "projectPath": "C:\\Github\\Exercise-uls\\uls-task\\Client\\uls-task.Client.csproj"
               },
