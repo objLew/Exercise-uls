@@ -17,7 +17,7 @@ namespace GeneralLibUnitTests
             string inputString = "2.5*3p";
 
             // Act
-            Boolean result = DecodeHelper.SanityCheck(inputString);
+            bool result = DecodeHelper.SanityCheck(inputString);
 
             // Assert
             Assert.IsFalse(result);
